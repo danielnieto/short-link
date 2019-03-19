@@ -1,11 +1,22 @@
 import React from 'react';
+import {browserHistory, withRouter} from 'react-router-dom';
 
-export default class Signup extends React.Component {
+class Signup extends React.Component {
+
+  onLogoutButtonClick() {
+    this.props.history.push('/');
+  }
+
   render() {
     return (
-      <p>
-        Link component
-      </p>
+      <div>
+        <h1>
+          Link component
+        </h1>
+        <button onClick={this.onLogoutButtonClick.bind(this)}>Log out</button>
+      </div>
     );
   }
 }
+
+export default withRouter(Signup);
